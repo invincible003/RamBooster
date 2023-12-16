@@ -61,7 +61,7 @@ class Manager(private var context: Context) {
         return memory
     }
     companion object {
-        val check  = checkRoot()
+        val IS_ROOR_GRANTED  = checkRoot()
         private fun checkRoot(): Boolean {
             Shell.getShell()
             return Shell.isAppGrantedRoot()==true
