@@ -69,7 +69,7 @@ class MainActivity : ComponentActivity() {
 
             AppTheme {
 
-                if (!Manager.check) {
+                if (!Manager.IS_ROOR_GRANTED) {
                     if (openAlertDialog) {
                         NoRootDialog(
                             onConfirmation = { openAlertDialog = false },
