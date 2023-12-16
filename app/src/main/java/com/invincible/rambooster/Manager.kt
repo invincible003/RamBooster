@@ -70,7 +70,7 @@ class Manager(private var context: Context) {
 }
 
 
-object Utility{
+/*object Utility{
     fun Context.Toast(text : String){
         Toast.makeText(this,text, Toast.LENGTH_LONG).show()
     }
@@ -78,3 +78,4 @@ object Utility{
         Log.v("-----LOGGING------",text.toString())
     }
 }
+*/
