@@ -27,7 +27,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -37,6 +36,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.compose.AppTheme
 import com.google.android.material.color.DynamicColors
 import com.topjohnwu.superuser.Shell
@@ -62,19 +62,18 @@ class MainActivity : ComponentActivity() {
 
         setContent {
 
-            var openAlertDialog by rememberSaveable { mutableStateOf(true) }
+            var noRootDialog by rememberSaveable { mutableStateOf(!Manager.IS_ROOT_GRANTED) }
             var logs by remember { mutableStateOf("Logs Will Appear Here") }
             var appDescription by remember { mutableStateOf("New And Powerful Tool Only For Rooted Devices !") }
-
+            val ram by manager.getRamInfo().collectAsStateWithLifecycle(initialValue = "")
 
             AppTheme {
 
-                if (!Manager.IS_ROOR_GRANTED) {
-                    if (openAlertDialog) {
-                        NoRootDialog(
-                            onConfirmation = { openAlertDialog = false },
-                        )
-                    }
+
+                if (noRootDialog) {
+                    NoRootDialog(
+                        onConfirmation = { noRootDialog = false },
+                    )
                     appDescription = "Root Not Found\n" +
                             "Only Radio Info Will Work So Don't Complain"
                 } else {
@@ -96,7 +95,7 @@ class MainActivity : ComponentActivity() {
                             fontWeight = FontWeight.Bold
                         )
                         Text("With Love 💕")
-                        Spacer(modifier = Modifier.height(30.dp))
+                        Spacer(modifier = Modifier.height(20.dp))
                         Text(
                             appDescription,
                             modifier = Modifier
@@ -106,8 +105,7 @@ class MainActivity : ComponentActivity() {
                         Box(
                             modifier = Modifier
                                 .weight(1f)
-                                .padding(16.dp)
-                                .padding(bottom = 20.dp),
+                                .padding(16.dp),
                             contentAlignment = Alignment.BottomCenter,
                         ) {
                             Column {
@@ -169,11 +167,12 @@ class MainActivity : ComponentActivity() {
                             textAlign = TextAlign.Center,
                         )
                         Text(
-                            "Memory ${manager.getRamInfo()}"
+                            "Memory $ram"
                         )
                     }
                 }
             }
+
         }
     }
 
