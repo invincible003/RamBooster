@@ -1,0 +1,72 @@
+[versions]
+
+kotlin = "1.9.22"
+firebaseBom = "32.7.0"
+agp = "8.4.0-alpha04"
+googleServices = "4.4.0"
+googledevtoolsksp = "1.9.20-1.0.14"
+
+appcompat = "1.6.1"
+coilCompose = "2.5.0"
+constraintlayout = "2.1.4"
+datastorePreferencesVersion = "1.0.0"
+firebaseCrashlyticsBuildtools = "2.9.9"
+firebaseDatabaseKtx = "20.3.0"
+firebaseFirestore = "24.10.0"
+kotlinxCoroutinesAndroid = "1.7.3"
+libSU = "5.2.0"
+coreKtx = "1.12.0"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+lifecycleRuntimeKtx = "2.7.0"
+activityCompose = "1.8.2"
+composeBom = "2023.10.01"
+material = "1.11.0"
+roomKtx = "2.6.1"
+zoomage = "1.3.1"
+firebaseStorageKtx = "20.3.0"
+
+[libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycleRuntimeKtx" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomKtx" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferencesVersion" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+
+firebase-crashlytics-buildtools = { module = "com.google.firebase:firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
+firebase-database-ktx = { module = "com.google.firebase:firebase-database-ktx", version.ref = "firebaseDatabaseKtx" }
+firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx", version.ref = "firebaseFirestore" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+core = { module = "com.github.topjohnwu.libsu:core", version.ref = "libSU" }
+nio = { module = "com.github.topjohnwu.libsu:nio", version.ref = "libSU" }
+zoomage = { module = "com.jsibbold:zoomage", version.ref = "zoomage" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+googleServices = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx", version.ref = "firebaseStorageKtx" }
+
+
+[plugins]
+
+android-Application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-Kotlin-Android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+googledevtoolsksp = { id = "com.google.devtools.ksp", version.ref = "googledevtoolsksp" }
